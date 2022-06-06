@@ -4,13 +4,13 @@
      <p>hey you....displayname</p>        
      <p class="email">Currently logged in as...email</p>
     </div>
-   <button>Logout</button>
+   <button @click="handleLogout">Logout</button>
     
   </nav>
 </template>
 
 <script>
-import useLogout from '../composables/useLogout'
+import useLogout from '../composbles/useLogout'
 export default {
     setup(context){
         const {logout, error} = useLogout()

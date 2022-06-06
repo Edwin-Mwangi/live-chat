@@ -10,7 +10,7 @@ const routes = [
  },
  {
    path: '/chatroom',
-   name: Chatroom,
+   name: 'Chatroom',
    component: Chatroom
  }
 
