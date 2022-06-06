@@ -19,7 +19,7 @@ const login = async(email, password) => {
 
 }
 const useLogin = () => {
-    return{ error, login}
+    return{ error, login }
 }
 
 export default useLogin
