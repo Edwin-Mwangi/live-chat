@@ -1,6 +1,6 @@
 import firebase from '@firebase/app-compat';
 import 'firebase/compat/firestore'
-import 'firebase/auth'
+import 'firebase/compat/auth'
 
 
 const firebaseConfig = {
@@ -19,4 +19,4 @@ const projectFirestore = firebase.firestore()
 const projectAuth = firebase.auth()
 const timestamp = firebase.firestore.FieldValue.serverTimestamp
 
-export { projectFirestore, timestamp}
+export { projectFirestore, projectAuth, timestamp}
