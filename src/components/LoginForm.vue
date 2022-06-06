@@ -14,8 +14,14 @@ export default {
         const password = ref('')
         const email = ref('')
 
-        const handleSubmit = () => {
-            console.log( password.value, email.value )
+        const { login, error } = useLogin()
+
+        const handleSubmit = async() => {
+          await login(email.value, password.value)
+          if(!error.value){
+            console.log('user logged in')
+          }
+            // console.log( password.value, email.value )
         }
 
         return{ password, email, handleSubmit }
