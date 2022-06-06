@@ -14,9 +14,9 @@ const logout = async() => {
     }
 }
 
-const useLogin = () => {
-    return{ error, login }
+const useLogout = () => {
+    return{ error, logout }
 }
 
-export default useLogin
+export default useLogout
    

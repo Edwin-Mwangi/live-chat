@@ -10,13 +10,17 @@
 </template>
 
 <script>
-import useLogout from '../composbles/useLogout'
+import useLogout from '../composables/useLogout'
 export default {
     setup(context){
         const {logout, error} = useLogout()
         const handleLogout = async() =>{
             await logout()
-            context.emit(logout)
+            if(!error.value){
+                console.log('user logged out')
+                context.emit(logout)
+            }
+            
         }
     }
 
