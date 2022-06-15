@@ -7,8 +7,9 @@ const getCollection = (collection) => {
 
     let collectionRef = projectFirestore.collection(collection).orderBy('createdAt') 
 
-    collectionRef.onSnapshot((snap) => {
+    const unsub = collectionRef.onSnapshot((snap) => {
         let results = []
+        console.log('snapshot')
         snap.docs.forEach(doc => {
             doc.data().createdAt && results.push({ ...doc.data(), id: doc.id })
         })
@@ -19,6 +20,10 @@ const getCollection = (collection) => {
         console.log(err.message)
         documents.value = null
         error.value = 'unable to fetch data'
+    })
+
+    watchEffect(onInvalidate => {
+        onInvalidate(() => unsub())
     })
 
     return { documents, error }
