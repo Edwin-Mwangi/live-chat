@@ -25,4 +25,9 @@ button {
     border: 0;
     border-radius: 20px;
     padding: 10px 20px;
+    cursor: pointer;
+}
+button:active {
+    padding: 9px 19px;
+    /* font-weight: bold; */
 }

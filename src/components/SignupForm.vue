@@ -13,7 +13,7 @@
 import { ref } from '@vue/reactivity'
 import useSignup from '../composables/useSignup'
 export default {
-    setup(context){
+    setup(props, context){
 
       const { error, signup } = useSignup()
       
@@ -26,7 +26,7 @@ export default {
         await signup(email.value, password.value, displayName.value)
           // console.log( displayName.value, password.value, email.value )
           if(!error.value){
-            context.emit(signin)
+            context.emit('signup')
             console.log('user logged in')
           }
       }
