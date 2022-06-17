@@ -1,5 +1,6 @@
 import { projectFirestore } from "@/firebase/config"
 import { ref } from "@vue/reactivity"
+import { watchEffect } from "@vue/runtime-core"
 
 const getCollection = (collection) => {
     const documents = ref(null)
