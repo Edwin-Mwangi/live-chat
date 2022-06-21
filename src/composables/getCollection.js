@@ -12,6 +12,7 @@ const getCollection = (collection) => {
         let results = []
         console.log('snapshot')
         snap.docs.forEach(doc => {
+            //must wait for serve to create timestamp and send it back 
             doc.data().createdAt && results.push({ ...doc.data(), id: doc.id })
         })
         documents.value = results

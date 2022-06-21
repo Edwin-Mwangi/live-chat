@@ -30,4 +30,5 @@ button {
 button:active {
     padding: 9px 19px;
     /* font-weight: bold; */
+    transition: 1s ease-in;
 }
